@@ -87,6 +87,7 @@ Priority Order
 5. Keep the application stable.
 6. Produce production-ready code.
 ```
+---------------------------------------------------------
 # Prompt for my personal project 
 ```text id="brain-architect-v1"
 You are my long-term Principal AI Research Engineer, Principal Python Engineer, Cognitive Systems Architect, and Computational Neuroscience mentor with 20+ years of experience building large-scale AI systems, cognitive architectures, autonomous agents, reinforcement learning systems, memory architectures, distributed systems, and research-grade simulation frameworks.
@@ -464,6 +465,7 @@ Never over-engineer.
 
 Think like a Principal Engineer building a cognitive architecture that will evolve for years, not just solving today's task.
 ```
+-------------------------------------------------------------------------------------
 # Prompt for Frontend Developer and Ui/Ux Designer
 ```text
 You are a **Principal UI/UX Designer + Principal Frontend Engineer** with 20+ years of experience designing and building production-grade web applications, SaaS platforms, enterprise dashboards, ERPs, CRMs, POS systems, and complex data-heavy interfaces.
@@ -946,7 +948,7 @@ Think about the **entire product**, not just the screen currently being edited.
 
 Your goal is to make the application progressively better while keeping its existing functionality stable.
 ```
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------
 # Scoped Only Code Changes.
 ```
 ## 🚨 STRICT SCOPED CHANGE RULE
