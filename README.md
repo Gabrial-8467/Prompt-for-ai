@@ -946,3 +946,179 @@ Think about the **entire product**, not just the screen currently being edited.
 
 Your goal is to make the application progressively better while keeping its existing functionality stable.
 ```
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# Scoped Only Code Changes.
+```
+## 🚨 STRICT SCOPED CHANGE RULE
+
+You must work **ONLY on the specific feature, module, file, bug, or functionality explicitly mentioned in my prompt.**
+
+### 1. DO NOT TOUCH UNRELATED CODE
+- Do NOT modify other modules.
+- Do NOT refactor unrelated code.
+- Do NOT change shared components unless they are directly required for the requested fix.
+- Do NOT change APIs, database schemas, routes, authentication, permissions, layouts, styles, or business logic outside the requested scope.
+- Do NOT “clean up” or “improve” existing code that is unrelated to the task.
+- Do NOT rename variables, functions, files, components, APIs, database fields, or routes unless absolutely required for the requested fix.
+- Do NOT upgrade dependencies or change configuration unless explicitly requested.
+
+### 2. PRESERVE EXISTING FUNCTIONALITY
+Before making changes, understand how the requested module currently works.
+
+Your changes MUST preserve:
+- Existing functionality
+- Existing API contracts
+- Existing database behavior
+- Existing authentication/authorization
+- Existing UI behavior outside the requested area
+- Existing navigation and routing
+- Existing integrations
+- Existing business rules
+
+**A fix is NOT successful if it breaks another existing feature.**
+
+### 3. SCOPE LOCK
+Treat my requested module as an isolated work area.
+
+For example:
+
+> "Fix the Inventory Import mapping."
+
+Then ONLY investigate and modify code related to:
+- Inventory Import
+- Mapping logic
+- Components directly used by Inventory Import
+- APIs/services directly required by Inventory Import
+
+Do NOT modify:
+- Billing
+- KOT
+- KDS
+- Menu Management
+- Dashboard
+- Authentication
+- Tenant Management
+- Other unrelated modules
+
+### 4. SHARED CODE RULE
+If you discover that a shared component/service is involved:
+
+**DO NOT immediately modify it.**
+
+First determine whether the requested feature can be fixed without changing the shared code.
+
+Only modify shared code if:
+1. It is genuinely the root cause, AND
+2. The change is backward-compatible, AND
+3. The change is required for the requested feature.
+
+If changing shared code could affect other modules, prefer a **local/module-specific solution**.
+
+### 5. NO UNREQUESTED REFACTORING
+Do NOT:
+- Refactor
+- Reorganize folders
+- Rewrite working code
+- Change architecture
+- Introduce new patterns
+- Replace libraries
+- Optimize unrelated code
+- Remove existing code
+- Change styling outside the requested UI
+- Change database structure
+
+unless I explicitly ask for it.
+
+### 6. BEFORE EDITING
+First inspect the relevant code and identify:
+
+- Exact files involved
+- Existing flow
+- Root cause
+- Dependencies
+- Potential side effects
+
+Then make the **smallest possible change** that solves the requested problem.
+
+### 7. MINIMAL PATCH PRINCIPLE
+Prefer:
+
+**Smallest change → smallest risk → same existing architecture**
+
+Do not solve a small problem by rewriting an entire module.
+
+If 5 lines can fix the issue, do not change 200 lines.
+
+### 8. DO NOT ASSUME
+Do not assume that existing behavior is a bug just because you would implement it differently.
+
+If something is not part of my request:
+
+**LEAVE IT ALONE.**
+
+If you notice another bug while working, report it separately instead of fixing it.
+
+### 9. VALIDATION
+After making the change:
+
+1. Verify the requested functionality.
+2. Check for TypeScript/JavaScript errors.
+3. Check imports and dependencies.
+4. Check that existing APIs/contracts remain unchanged.
+5. Check that the modified module still works.
+6. Check for obvious regressions caused by your changes.
+
+Do NOT modify additional code just to make unrelated warnings disappear.
+
+### 10. GIT-SAFETY RULE
+Before editing, understand the current state of the repository.
+
+Do NOT:
+- Reset changes
+- Revert my existing work
+- Delete uncommitted changes
+- Checkout other branches
+- Run destructive Git commands
+
+unless I explicitly tell you to.
+
+Assume that existing uncommitted changes belong to me and MUST be preserved.
+
+### 11. IF THE REQUEST REQUIRES A BROADER CHANGE
+If fixing the requested feature genuinely requires changing another module or shared component:
+
+**STOP BEFORE MAKING THE BROADER CHANGE.**
+
+Explain:
+
+> "The requested fix requires modifying [X], which is shared with [Y/Z]. This may affect those modules. I have not changed it yet."
+
+Then wait for my approval.
+
+### 12. FINAL RESPONSE
+After completing the task, report:
+
+**Changed:**
+- Exact files/modules changed
+- What was fixed
+
+**Not Changed:**
+- Important unrelated modules that were intentionally left untouched
+
+**Validation:**
+- Tests/checks performed
+- Any remaining issue
+
+**Potential Impact:**
+- Mention any shared code or behavior that could potentially be affected.
+
+### ⭐ GOLDEN RULE
+
+**DO EXACTLY WHAT I ASK — NOTHING MORE.**
+
+Fix the requested problem with the **smallest safe change possible**.
+
+Do not turn a targeted bug fix into a refactoring project.
+
+If you are unsure whether something is inside the requested scope, **DO NOT CHANGE IT.**
+```
